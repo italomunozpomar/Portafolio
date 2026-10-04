@@ -7,13 +7,13 @@
 }
 :root {
   color-scheme: dark;
-  --bg: #141a17;
-  --surface: #202923;
+  --bg: #101113;
+  --surface: #1d1f23;
   --text: #f1f2ed;
-  --muted: #b9c4bc;
+  --muted: #bdc1c8;
   --accent: #bdeccb;
-  --border: #6c8072;
-  --line: #39483e;
+  --border: #72777f;
+  --line: #35383e;
   --font: Manrope, "Segoe UI", Arial, sans-serif;
 }
 * {
@@ -358,7 +358,7 @@ h1 {
 .art-orbit {
   position: absolute;
   inset: 15%;
-  border: 1px solid #6c807245;
+  border: 1px solid #72777f45;
   border-radius: 50%;
   transform: rotate(-32deg) scaleY(0.57);
   z-index: 1;
@@ -605,7 +605,7 @@ h1 {
   display: grid;
   place-items: center;
   transform: translate(-50%, -50%) rotate(-12deg);
-  background: linear-gradient(135deg, #bdeccb22, #202923);
+  background: linear-gradient(135deg, #bdeccb22, #1d1f23);
   border: 1px solid var(--accent);
   box-shadow:
     0 0 65px #bdeccb12,
@@ -648,8 +648,8 @@ h1 {
 }
 .story-machine[data-chapter="ops"] .machine-core {
   box-shadow:
-    14px 14px 0 #39483e,
-    -14px -14px 0 #202923;
+    14px 14px 0 #35383e,
+    -14px -14px 0 #1d1f23;
 }
 .story-machine[data-chapter="ai"] .machine-core {
   border-radius: 50%;
@@ -698,7 +698,7 @@ h1 {
   gap: 8%;
   padding: 56px;
   border: 1px solid var(--line);
-  background: linear-gradient(140deg, #202923b0, #141a17);
+  background: linear-gradient(140deg, #1d1f23b0, #101113);
   position: relative;
   isolation: isolate;
 }
@@ -799,7 +799,7 @@ h1 {
   width: 85%;
   height: 290px;
   border: 1px solid var(--border);
-  background: #1b251e;
+  background: #1b1d21;
   box-shadow: 0 25px 70px #0005;
   transform: rotate(-8deg);
 }
@@ -807,13 +807,13 @@ h1 {
   top: 16px;
   left: 9%;
   transform: rotate(9deg);
-  background: #20292380;
+  background: #1d1f2380;
 }
 .frame-mid {
   top: 58px;
   left: 4%;
   transform: rotate(2deg);
-  background: #202923d0;
+  background: #1d1f23d0;
 }
 .frame-back > span,
 .frame-mid > span {
@@ -885,7 +885,7 @@ h1 {
   position: absolute;
   width: 90%;
   height: 75%;
-  border: 1px dashed #6c807250;
+  border: 1px dashed #72777f50;
   border-radius: 50%;
   left: 6%;
   top: 15%;
@@ -1008,11 +1008,11 @@ figcaption {
   height: 42px;
   display: block;
   border: 1px solid var(--border);
-  background: linear-gradient(110deg, #39483e, #202923);
+  background: linear-gradient(110deg, #35383e, #1d1f23);
   margin-bottom: 12px;
   transform: skewY(8deg);
   position: relative;
-  box-shadow: 10px 12px 0 #141a17;
+  box-shadow: 10px 12px 0 #101113;
 }
 .server-stack > i::before {
   content: "";
@@ -1131,7 +1131,7 @@ details[open] .detail-toggle::after {
 /* Original concept illustrations for the public projects. */
 .projects-section {
   padding-block: 110px;
-  background: #1b231e;
+  background: #17191d;
   border-block: 1px solid var(--line);
 }
 .project-list {
@@ -1167,17 +1167,24 @@ details[open] .detail-toggle::after {
 }
 .project-name {
   display: flex;
+  flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;
 }
 .project-name h3 {
+  flex: 0 0 auto;
+  max-width: 100%;
   font-size: 2rem;
   line-height: 1.2;
+  overflow-wrap: normal;
 }
 .project-name h3 a {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  white-space: nowrap;
   gap: 16px;
   min-height: 44px;
   align-items: center;
@@ -1217,7 +1224,7 @@ details[open] .detail-toggle::after {
   position: absolute;
   width: 215px;
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, #39483e, #202923);
+  background: linear-gradient(135deg, #35383e, #1d1f23);
   padding: 22px;
   box-shadow: 0 20px 50px #0005;
 }
@@ -1300,7 +1307,7 @@ details[open] .detail-toggle::after {
 .project-orbit {
   position: absolute;
   inset: 12% 18%;
-  border: 1px dashed #6c807280;
+  border: 1px dashed #72777f80;
   border-radius: 50%;
   z-index: -1;
   transform: rotate(-35deg) scaleY(0.65);
@@ -1321,7 +1328,7 @@ details[open] .detail-toggle::after {
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(25deg, #202923, #39483e40);
+  background: linear-gradient(25deg, #1d1f23, #35383e40);
 }
 .camera-feed::after {
   content: "";
@@ -1422,10 +1429,10 @@ details[open] .detail-toggle::after {
   height: 235px;
   background: linear-gradient(
     120deg,
-    #6c8072,
-    #202923 8%,
-    #141a17 85%,
-    #6c8072
+    #72777f,
+    #1d1f23 8%,
+    #101113 85%,
+    #72777f
   );
   padding: 13px 9px 10px;
   border-radius: 23px;
@@ -1440,7 +1447,7 @@ details[open] .detail-toggle::after {
 .phone-screen {
   height: 100%;
   border-radius: 13px;
-  background: #202923;
+  background: #1d1f23;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1463,7 +1470,7 @@ details[open] .detail-toggle::after {
 .qr-art {
   width: 75px;
   height: 75px;
-  background: repeating-conic-gradient(#6c8072 0 25%, transparent 0 50%) 0
+  background: repeating-conic-gradient(#72777f 0 25%, transparent 0 50%) 0
     0/12px 12px;
   position: relative;
   border: 5px solid var(--text);
@@ -1566,8 +1573,8 @@ details[open] .detail-toggle::after {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(#141a1712 1px, transparent 1px),
-    linear-gradient(90deg, #141a1712 1px, transparent 1px);
+    linear-gradient(#10111312 1px, transparent 1px),
+    linear-gradient(90deg, #10111312 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: linear-gradient(90deg, transparent, #000);
 }
@@ -2588,13 +2595,13 @@ body.motion-paused :is(a, button, .detail-toggle) {
   background: var(--accent);
 }
 .registrapp-art .project-art-word {
-  color: #141a1715;
+  color: #10111315;
 }
 .registrapp-art .phone-halo {
-  border-color: #141a1750;
+  border-color: #10111350;
 }
 .frame-front {
-  background: #243329;
+  background: #23262b;
 }
 .room-lines {
   stroke: var(--muted);
