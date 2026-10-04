@@ -15,6 +15,9 @@
   --border: #72777f;
   --line: #35383e;
   --font: Manrope, "Segoe UI", Arial, sans-serif;
+  --type-body: 1rem;
+  --type-ui: 0.875rem;
+  --type-label: 0.8125rem;
 }
 * {
   box-sizing: border-box;
@@ -26,7 +29,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 400 1rem/1.75 var(--font);
+  font: 400 var(--type-body) / 1.75 var(--font);
   -webkit-font-smoothing: antialiased;
 }
 ::selection {
@@ -124,7 +127,7 @@ main[id] {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.875rem;
+  font-size: var(--type-ui);
   font-weight: 650;
   margin-right: auto;
   min-height: 44px;
@@ -141,7 +144,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: 28px;
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
 }
 nav a {
   display: inline-flex;
@@ -174,7 +177,7 @@ nav a:focus-visible::after {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.6875rem;
+  font-size: var(--type-ui);
 }
 .motion-icon {
   color: var(--accent);
@@ -224,7 +227,7 @@ nav a:focus-visible::after {
 .hero-overline {
   display: flex;
   justify-content: space-between;
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   text-transform: uppercase;
   letter-spacing: 0.17em;
   color: var(--muted);
@@ -245,7 +248,7 @@ nav a:focus-visible::after {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
   color: var(--muted);
   margin-bottom: 30px;
 }
@@ -279,7 +282,7 @@ h1 {
   max-width: 39ch;
   margin-top: 26px;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: var(--type-body);
   line-height: 1.8;
 }
 .hero-actions {
@@ -296,7 +299,7 @@ h1 {
   gap: 26px;
   min-height: 56px;
   padding: 14px 22px;
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
   font-weight: 650;
   transition:
     background 0.2s,
@@ -323,7 +326,7 @@ h1 {
   align-items: center;
   gap: 14px;
   min-height: 44px;
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
   font-weight: 550;
 }
 .text-link > span {
@@ -410,7 +413,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 0.6875rem;
+  font-size: var(--type-label);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   align-self: end;
@@ -433,7 +436,7 @@ h1 {
   min-width: 0;
 }
 .selector-label {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--muted);
@@ -449,13 +452,13 @@ h1 {
   background: transparent;
   padding: 5px 0;
   min-height: 44px;
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
   position: relative;
   color: var(--muted);
 }
 .track-controls button > span {
   font-family: ui-monospace, monospace;
-  font-size: 0.5625rem;
+  font-size: var(--type-label);
   margin-right: 7px;
 }
 .track-controls button::after {
@@ -483,19 +486,19 @@ h1 {
 }
 .track-info p {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--type-body);
   line-height: 1.7;
   max-width: 40ch;
   min-height: 3.4em;
 }
 .track-info .text-link {
-  font-size: 0.6875rem;
+  font-size: var(--type-ui);
   flex-shrink: 0;
   min-height: 32px;
   max-width: 170px;
 }
 .map-fallback {
-  font-size: 0.8125rem;
+  font-size: var(--type-body);
   color: var(--muted);
   margin-top: 12px;
 }
@@ -504,7 +507,7 @@ h1 {
 }
 /* Native sticky composition. Scroll only transforms its children. */
 .eyebrow {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
@@ -562,8 +565,9 @@ h1 {
 }
 .chapter-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--muted);
@@ -620,7 +624,7 @@ h1 {
   border: 1px solid var(--border);
   background: var(--bg);
   font-family: ui-monospace, monospace;
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   padding: 8px 14px;
   transform: rotate(-8deg);
   box-shadow: 0 20px 30px #0003;
@@ -641,7 +645,7 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 0;
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
@@ -687,7 +691,7 @@ h1 {
   margin-bottom: 70px;
 }
 .section-heading > p {
-  font-size: 0.875rem;
+  font-size: var(--type-body);
   color: var(--muted);
   max-width: 33ch;
   padding-bottom: 7px;
@@ -714,16 +718,18 @@ h1 {
 .case-index {
   display: block;
   font:
-    400 0.5625rem ui-monospace,
+    400 var(--type-label) ui-monospace,
     monospace;
   letter-spacing: 0.15em;
   color: var(--muted);
   margin-bottom: 34px;
 }
 .case-category {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   color: var(--muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
@@ -740,25 +746,25 @@ h1 {
 .featured-copy > p:not(.case-category):not(.case-lead):not(.delivery),
 .secondary-case > p:not(.case-lead):not(.delivery) {
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: var(--type-body);
 }
 .case-outcome {
   border-left: 1px solid var(--accent);
   padding-left: 16px;
   margin-top: 24px;
-  font-size: 0.8125rem;
+  font-size: var(--type-body);
   color: var(--muted);
 }
 .case-outcome > span {
   color: var(--text);
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   display: block;
   margin-bottom: 6px;
 }
 .delivery {
-  font-size: 0.6875rem;
+  font-size: var(--type-label);
   line-height: 1.8;
   color: var(--muted);
   margin-top: 25px;
@@ -782,7 +788,7 @@ h1 {
 .tech-list li {
   padding: 4px 9px;
   border: 1px solid var(--line);
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .vision-figure {
@@ -893,7 +899,7 @@ h1 {
   transform: rotate(-28deg);
 }
 figcaption {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.04em;
   color: var(--muted);
   line-height: 1.8;
@@ -906,6 +912,7 @@ figcaption {
   margin-top: 28px;
 }
 .secondary-case {
+  min-width: 0;
   padding: 36px;
   border: 1px solid var(--line);
   position: relative;
@@ -917,6 +924,7 @@ figcaption {
 }
 .case-topline {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: start;
   gap: 10px;
@@ -929,11 +937,12 @@ figcaption {
 .process-line,
 .integration-line {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   margin-block: 25px;
   font:
-    0.625rem ui-monospace,
+    var(--type-label) ui-monospace,
     monospace;
   color: var(--accent);
 }
@@ -1056,7 +1065,7 @@ figcaption {
   margin-top: 70px;
 }
 .more-cases-intro {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1086,7 +1095,7 @@ summary::-webkit-details-marker {
   letter-spacing: -0.03em;
 }
 .detail-subtitle {
-  font-size: 0.8125rem;
+  font-size: var(--type-ui);
   letter-spacing: 0;
   color: var(--muted);
 }
@@ -1119,12 +1128,12 @@ details[open] .detail-toggle::after {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   padding: 10px 4px 40px;
-  font-size: 0.875rem;
+  font-size: var(--type-body);
   color: var(--muted);
 }
 .case-detail h4 {
   color: var(--text);
-  font-size: 0.75rem;
+  font-size: var(--type-ui);
   font-weight: 550;
   margin-bottom: 10px;
 }
@@ -1197,7 +1206,7 @@ details[open] .detail-toggle::after {
   color: var(--accent);
 }
 .project-name > span {
-  font-size: 0.5625rem;
+  font-size: var(--type-label);
   max-width: 22ch;
   text-align: right;
   color: var(--muted);
@@ -1206,12 +1215,12 @@ details[open] .detail-toggle::after {
   letter-spacing: 0.07em;
 }
 .project-row > p:not(.project-stack) {
-  font-size: 0.8125rem;
+  font-size: var(--type-body);
   color: var(--muted);
   max-width: 55ch;
 }
 .project-stack {
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   color: var(--accent);
   margin-top: 22px;
   padding-top: 15px;
@@ -1526,7 +1535,7 @@ details[open] .detail-toggle::after {
 }
 .profile-intro > p:not(.eyebrow):not(.profile-lead) {
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: var(--type-body);
   max-width: 44ch;
 }
 .profile-focus {
@@ -1534,7 +1543,7 @@ details[open] .detail-toggle::after {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 28px;
-  font-size: 0.625rem;
+  font-size: var(--type-ui);
 }
 .profile-focus span {
   border: 1px solid var(--border);
@@ -1552,10 +1561,10 @@ details[open] .detail-toggle::after {
 }
 .experience-list p {
   color: var(--muted);
-  font-size: 0.8125rem;
+  font-size: var(--type-body);
 }
 .experience-date {
-  font-size: 0.625rem;
+  font-size: var(--type-ui);
   color: var(--accent);
   display: block;
   margin-bottom: 10px;
@@ -1585,7 +1594,7 @@ details[open] .detail-toggle::after {
   align-items: end;
 }
 .contact-intro {
-  font-size: 0.6875rem;
+  font-size: var(--type-label);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 26px;
@@ -1596,7 +1605,7 @@ details[open] .detail-toggle::after {
   letter-spacing: -0.065em;
 }
 .contact-actions > p {
-  font-size: 0.9375rem;
+  font-size: var(--type-body);
   max-width: 32ch;
   margin-bottom: 24px;
 }
@@ -1626,7 +1635,7 @@ details[open] .detail-toggle::after {
   align-items: center;
   gap: 24px;
   min-height: 110px;
-  font-size: 0.625rem;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .site-footer a {
@@ -1786,7 +1795,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     padding-block: 10px;
   }
   .identity {
-    font-size: 0.75rem;
+    font-size: var(--type-ui);
   }
   .monogram {
     width: 30px;
@@ -1797,7 +1806,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     margin-left: auto;
   }
   nav a {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
   }
   nav a:nth-child(3) {
     display: none;
@@ -1806,7 +1815,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     padding-inline: 10px;
   }
   .hero-overline {
-    font-size: 0.5rem;
+    font-size: var(--type-label);
     letter-spacing: 0.1em;
   }
   .hero-layout {
@@ -1818,11 +1827,11 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: clamp(3.7rem, 8.7vw, 5.8rem);
   }
   .role {
-    font-size: 0.625rem;
+    font-size: var(--type-ui);
     margin-bottom: 20px;
   }
   .hero-intro {
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
     margin-top: 17px;
   }
   .hero-actions {
@@ -1830,7 +1839,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     margin-top: 22px;
   }
   .button {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
     padding: 12px 16px;
     min-height: 50px;
     gap: 16px;
@@ -1844,7 +1853,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     gap: 25px;
   }
   .scroll-cue {
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
     gap: 10px;
   }
   .scroll-arrow {
@@ -1855,13 +1864,13 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     gap: 18px;
   }
   .track-controls button {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
   }
   .selector-label {
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
   .track-info p {
-    font-size: 0.6875rem;
+    font-size: var(--type-body);
   }
   .system-story {
     padding-top: 85px;
@@ -1884,7 +1893,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 1.5rem;
   }
   .machine-node {
-    font-size: 0.5rem;
+    font-size: var(--type-label);
     padding: 6px 10px;
   }
   .story-chapter {
@@ -1895,14 +1904,14 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 2rem;
   }
   .story-chapter > p:not(.eyebrow) {
-    font-size: 0.875rem;
+    font-size: var(--type-body);
   }
   .chapter-number {
     font-size: 5rem;
   }
   .chapter-tags {
     gap: 12px;
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
   .kinetic-divider {
     padding-bottom: 45px;
@@ -1915,7 +1924,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     gap: 30px;
   }
   .section-heading > p {
-    font-size: 0.75rem;
+    font-size: var(--type-body);
   }
   .featured-case {
     grid-template-columns: 1fr;
@@ -1964,7 +1973,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   }
   .process-line {
     flex-wrap: wrap;
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
     gap: 6px;
   }
   .detail-heading {
@@ -1975,7 +1984,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 1.1875rem;
   }
   .detail-subtitle {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
   }
   .case-detail {
     gap: 25px;
@@ -2059,14 +2068,14 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 3.4rem;
   }
   .contact-intro {
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
   .contact-actions > p {
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
   }
   .site-footer {
     min-height: 95px;
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
 }
 @media (max-width: 600px) {
@@ -2099,7 +2108,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   }
   nav a {
     min-height: 44px;
-    font-size: 0.625rem;
+    font-size: var(--type-ui);
   }
   nav a:nth-child(3) {
     display: inline-flex;
@@ -2111,7 +2120,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     padding-top: 18px;
   }
   .hero-overline {
-    font-size: 0.5rem;
+    font-size: var(--type-label);
   }
   .hero-overline span:last-child {
     display: none;
@@ -2124,7 +2133,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     min-height: 0;
   }
   .role {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
     margin-bottom: 21px;
   }
   h1 {
@@ -2133,7 +2142,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     letter-spacing: -0.068em;
   }
   .hero-intro {
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
     max-width: 38ch;
     margin-top: 16px;
   }
@@ -2175,26 +2184,26 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     margin-block: 7px 10px;
   }
   .track-controls button {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
     padding-inline: 2px;
   }
   .track-controls button > span {
-    font-size: 0.5rem;
+    font-size: var(--type-label);
     margin-right: 5px;
   }
   .track-info {
     display: block;
   }
   .track-info p {
-    font-size: 0.6875rem;
+    font-size: var(--type-body);
     max-width: 42ch;
   }
   .track-info .text-link {
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
   }
   .scroll-cue {
     align-self: start;
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
   .scroll-arrow {
     width: 32px;
@@ -2239,7 +2248,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 2.25rem;
   }
   .story-chapter > p:not(.eyebrow) {
-    font-size: 0.875rem;
+    font-size: var(--type-body);
     max-width: 38ch;
   }
   .story-chapter .eyebrow {
@@ -2273,10 +2282,10 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   }
   .section-heading > p {
     margin-top: 25px;
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
   }
   .eyebrow {
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
     margin-bottom: 20px;
   }
   .featured-case {
@@ -2290,14 +2299,14 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 3.4rem;
   }
   .featured-copy > p:not(.case-category):not(.case-lead):not(.delivery) {
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
   }
   .case-lead {
     font-size: 1.125rem;
     margin-block: 16px;
   }
   .case-outcome {
-    font-size: 0.75rem;
+    font-size: var(--type-body);
   }
   .vision-figure {
     margin-top: 30px;
@@ -2342,7 +2351,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     height: 85%;
   }
   figcaption {
-    font-size: 0.5625rem;
+    font-size: var(--type-label);
   }
   .secondary-cases {
     grid-template-columns: 1fr;
@@ -2371,7 +2380,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   }
   .detail-subtitle {
     grid-column: 1;
-    font-size: 0.6875rem;
+    font-size: var(--type-ui);
   }
   .detail-toggle {
     grid-column: 2;
@@ -2380,7 +2389,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   .case-detail {
     grid-template-columns: 1fr;
     gap: 22px;
-    font-size: 0.8125rem;
+    font-size: var(--type-body);
     padding-bottom: 30px;
   }
   summary {
@@ -2414,7 +2423,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
   .project-name > span {
     max-width: 18ch;
     text-align: right;
-    font-size: 0.5rem;
+    font-size: var(--type-label);
     padding-top: 7px;
   }
   .profile-card {
@@ -2481,11 +2490,11 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     margin-top: 36px;
   }
   .contact-actions > p {
-    font-size: 0.875rem;
+    font-size: var(--type-body);
     max-width: 35ch;
   }
   .contact-actions .button {
-    font-size: 0.8125rem;
+    font-size: var(--type-ui);
     min-height: 54px;
   }
   .site-footer {
@@ -2501,7 +2510,7 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     margin-left: auto;
   }
   .site-footer > span:nth-child(2) {
-    font-size: 0.5rem;
+    font-size: var(--type-label);
   }
 }
 @media (max-width: 380px) {
@@ -2512,13 +2521,13 @@ body.motion-active .server-stack > i:nth-child(3) > span {
     font-size: 3.5rem;
   }
   .track-controls button {
-    font-size: 0.625rem;
+    font-size: var(--type-ui);
   }
   .hero-art {
     margin-top: 0;
   }
   .track-controls button > span {
-    font-size: 0.4375rem;
+    font-size: var(--type-label);
   }
   .project-name {
     display: block;
