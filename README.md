@@ -26,7 +26,7 @@ assets/
     NOTICE.txt
 ```
 
-Este README puede acompañar el repositorio. `docs/`, `tasks/`, `.research/` y `.superpowers/` no forman parte del sitio. `.research/` contiene fuentes de trabajo privadas y queda excluida de Git; no publicar el directorio de trabajo completo.
+Este README puede acompañar el repositorio. `docs/`, `tasks/`, `.research/`, `.superpowers/`, `.impeccable/`, `PRODUCT.md` y `DESIGN.md` no forman parte del sitio. `.research/` contiene fuentes de trabajo privadas y queda excluida de Git; no publicar el directorio de trabajo completo.
 
 ## Vista previa
 
@@ -64,7 +64,9 @@ Los niveles de DevOps/Full Stack semi senior e IA junior reflejan el posicionami
 
 ## Experiencia visual
 
-La apertura combina tipografía grande con una escultura tridimensional original que gira, responde al cursor y cambia de geometría al elegir Producto, Infraestructura o IA. El scroll conserva el desplazamiento nativo: anima capas, cambia el sistema por capítulos y desplaza una franja tipográfica. Los proyectos tienen ilustraciones conceptuales originales; no son capturas de interfaces de clientes.
+La dirección Escenas combina tipografía grande a dos niveles con una escultura tridimensional original que gira, responde al cursor y cambia de geometría al elegir Producto, Infraestructura o IA. El scroll conserva el desplazamiento nativo: anima capas, cambia el sistema por capítulos y desplaza una franja tipográfica. Los proyectos tienen ilustraciones conceptuales originales; no son capturas de interfaces de clientes.
+
+En pantallas de al menos 1100 × 760 px, la galería fija su posición y el scroll recorre los proyectos horizontalmente. Los botones anterior/siguiente y el foco de los enlaces permiten avanzar entre escenas. Cada proyecto tiene su propia secuencia de ensamblaje. Móvil, ventanas de poca altura, pausa, movimiento reducido y ausencia de JavaScript presentan los proyectos en un recorrido vertical.
 
 El botón Pausar detiene la escultura, las secuencias GSAP y los bucles decorativos. La preferencia del sistema `prefers-reduced-motion` tiene prioridad y presenta el contenido sin animaciones. Sin JavaScript, los textos, enlaces y detalles nativos siguen disponibles, con una ilustración SVG de respaldo.
 
@@ -75,6 +77,8 @@ GSAP y ScrollTrigger se sirven desde `assets/vendor/`, sin CDN ni peticiones ext
 La entrega se verifica en el navegador de Codex en escritorio y móvil, con selección de las tres áreas, anclas, detalles y pausa/reanudación por teclado. La pausa también se comprueba comparando capturas separadas en el tiempo. Se prueban fuentes y scripts bloqueados por CSP y texto al 200% mediante la fuente raíz.
 
 La preferencia de movimiento del sistema se revisa en código; la herramienta de prueba no ofrece emulación de esa preferencia. El botón de pausa sí se prueba en el navegador real. No se afirma una auditoría exhaustiva con lector de pantalla ni pruebas en dispositivos físicos.
+
+La consolidación de Escenas se comprobó a 1440 × 900, 1222 × 900, 1280 × 720, 390 × 844 y 320 × 740 px. Se revisaron el avance real de la galería, el retorno vertical al pausar y la lectura sin JavaScript. Las comprobaciones HTTP verifican los archivos públicos, las rutas relativas y que las fuentes privadas no se sirven.
 
 El sitio no solicita datos de ClickUp, Bitbucket, Drive ni servicios de analítica. El Canvas deja de dibujar fuera de pantalla o con la pestaña oculta, limita la densidad de píxeles y utiliza una malla menor en móvil. Los enlaces externos admiten la apertura normal del navegador en otra pestaña.
 

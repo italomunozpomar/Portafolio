@@ -47,12 +47,12 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=20261004-type" />
+    <link rel="stylesheet" href="styles.css?v=20261004-escenas" />
     <script src="assets/vendor/gsap.min.js" defer></script>
     <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20261004-escenas" defer></script>
   </head>
-  <body>
+  <body class="scene-layout">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header page-shell">
       <a class="identity" href="#inicio" aria-label="Ítalo Muñoz Pomar, inicio">
@@ -88,7 +88,7 @@
           <span>Ingeniería de software / Chile</span
           ><span>Producto · Infraestructura · IA</span>
         </div>
-        <div class="hero-layout page-shell">
+        <div class="hero-layout page-shell"><div class="hero-path" aria-hidden="true"><svg viewBox="0 0 1400 800" preserveAspectRatio="none"><path d="M -80 700 C 300 880, 1120 720, 1110 260 S 270 -100, 180 210 S 480 700, 1470 480" /></svg></div>
           <div class="hero-copy">
             <p class="role">
               <span class="role-dot" aria-hidden="true"></span>DevOps &amp; Full
@@ -216,7 +216,6 @@
         aria-labelledby="story-title"
       >
         <div class="story-sticky">
-          <p class="eyebrow">El enfoque / 01 — 03</p>
           <h2 id="story-title">Pienso en el<br />sistema <em>completo.</em></h2>
           <div class="story-machine" aria-hidden="true" data-chapter="product">
             <div class="machine-ring ring-one"></div>
@@ -234,8 +233,8 @@
         <div class="story-chapters">
           <article class="story-chapter" data-chapter="product">
             <span class="chapter-number" aria-hidden="true">01</span>
-            <p class="eyebrow">Full Stack</p>
             <h3>Primero, entender<br />el problema.</h3>
+              <p class="chapter-specialty">Full Stack</p>
             <p>
               Como ingeniero, empiezo por ponerme en el lugar del cliente:
               entender su contexto, cómo trabaja y por qué enfrenta ese
@@ -252,8 +251,8 @@
           </article>
           <article class="story-chapter" data-chapter="ops">
             <span class="chapter-number" aria-hidden="true">02</span>
-            <p class="eyebrow">DevOps</p>
             <h3>El código tiene que<br />llegar a la operación.</h3>
+              <p class="chapter-specialty">DevOps</p>
             <p>
               Trabajo con entornos, despliegues e integraciones. Me importan los
               reintentos, la trazabilidad y poder recuperar un proceso cuando
@@ -268,8 +267,8 @@
           </article>
           <article class="story-chapter" data-chapter="ai">
             <span class="chapter-number" aria-hidden="true">03</span>
-            <p class="eyebrow">IA aplicada</p>
             <h3>Inteligencia que<br />sirva para trabajar.</h3>
+              <p class="chapter-specialty">IA aplicada</p>
             <p>
               Integro modelos con contexto y evidencia. Construyo el flujo que
               permite revisar sus resultados y convertirlos en acciones útiles.
@@ -622,7 +621,7 @@
         <div class="page-shell">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Laboratorio personal / Código abierto</p>
+
               <h2 id="projects-title">
                 La curiosidad<br /><em>también construye.</em>
               </h2>
@@ -632,10 +631,10 @@
               abierto para explorar.
             </p>
           </div>
-          <div class="project-list">
+          <div class="project-viewport" id="galeria-proyectos"><div class="gallery-controls" hidden><button type="button" class="gallery-prev" aria-label="Proyecto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><button type="button" class="gallery-next" aria-label="Proyecto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg></button></div><div class="project-list">
             <article class="project-row">
               <div class="project-art jobflex-art" aria-hidden="true">
-                <span class="project-art-word">CONNECT.</span>
+                <span class="project-art-word">JobFlex</span>
                 <div class="profile-card profile-back">
                   <i></i><b></b><b></b>
                 </div>
@@ -663,7 +662,7 @@
             </article>
             <article class="project-row">
               <div class="project-art vms-art" aria-hidden="true">
-                <span class="project-art-word">VISION.</span>
+                <span class="project-art-word">VMS</span>
                 <div class="camera-wall">
                   <div class="camera-feed">
                     <span>01</span><i class="person person-one"></i><b></b>
@@ -699,7 +698,7 @@
             </article>
             <article class="project-row">
               <div class="project-art ferremas-art" aria-hidden="true">
-                <span class="project-art-word">COMMERCE.</span
+                <span class="project-art-word">Ferremas</span
                 ><svg class="commerce-boxes" viewBox="0 0 460 280">
                   <defs>
                     <linearGradient id="box-shade" x2="1" y2="1">
@@ -752,7 +751,7 @@
             </article>
             <article class="project-row">
               <div class="project-art registrapp-art" aria-hidden="true">
-                <span class="project-art-word">PRESENT.</span>
+                <span class="project-art-word">RegistrApp</span>
                 <div class="phone">
                   <span class="phone-speaker"></span>
                   <div class="phone-screen">
@@ -781,7 +780,7 @@
               </p>
             </article>
           </div>
-          <a
+          </div><p class="illustration-note">Representaciones conceptuales de los proyectos.</p><a
             class="text-link all-projects"
             href="https://github.com/italomunozpomar"
             >Explorar mi GitHub <span aria-hidden="true">↗</span></a
@@ -795,7 +794,6 @@
         aria-labelledby="profile-title"
       >
         <div class="profile-intro">
-          <p class="eyebrow">Detrás del sistema / Ítalo Muñoz Pomar</p>
           <h2 id="profile-title">
             Me interesa lo que<br />pasa después del código.
           </h2>
@@ -857,9 +855,6 @@
         <div class="contact-grid" aria-hidden="true"></div>
         <div class="page-shell contact-layout">
           <div>
-            <p class="contact-intro">
-              Tu próxima idea puede ser un sistema real.
-            </p>
             <h2 id="contact-title">Construyamos<br />lo que sigue.</h2>
           </div>
           <div class="contact-actions">
