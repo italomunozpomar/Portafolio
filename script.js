@@ -387,14 +387,27 @@
         const viewport=document.querySelector('.project-viewport');
         const list=viewport.querySelector('.project-list');
         viewport.classList.add('gallery-running');
+        const rows=[...list.querySelectorAll('.project-row')];
         const distance=()=>Math.max(0,list.scrollWidth-viewport.clientWidth);
-        const rail=gsap.to(list,{x:()=>-distance(),ease:'none',scrollTrigger:{trigger:viewport,start:'top 100px',end:()=>'+='+distance()*1.15,pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1}});
+        const positions=()=>rows.map(row=>distance() ? row.offsetLeft/distance() : 0);
+        const closestIndex=progress=>positions().reduce((nearest,position,index,all)=>Math.abs(position-progress)<Math.abs(all[nearest]-progress)?index:nearest,0);
         const galleryControls=viewport.querySelector('.gallery-controls');
+        const updateControls=progress=>{
+          galleryControls.querySelector('.gallery-prev').disabled=progress<=.001;
+          galleryControls.querySelector('.gallery-next').disabled=progress>=.999;
+        };
+        const rail=gsap.to(list,{x:()=>-distance(),ease:'none',scrollTrigger:{trigger:viewport,start:'top 40px',end:()=>'+='+distance()*1.15,pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1,
+          onUpdate:self=>updateControls(self.progress),
+          snap:{snapTo:progress=>positions()[closestIndex(progress)],inertia:false,delay:.2,duration:{min:.15,max:.35}}
+        }});
         galleryControls.hidden=false;
-        const step=delta=>{
+        updateControls(rail.scrollTrigger.progress);
+        const goTo=index=>{
           const st=rail.scrollTrigger;
-          const next=Math.max(0,Math.min(3,Math.round(st.progress*3)+delta));
-          window.scrollTo({top:st.start+(st.end-st.start)*next/3,behavior:'smooth'});
+          window.scrollTo({top:st.start+(st.end-st.start)*positions()[index],behavior:'smooth'});
+        };
+        const step=delta=>{
+          goTo(Math.max(0,Math.min(rows.length-1,closestIndex(rail.scrollTrigger.progress)+delta)));
         };
         const next=()=>step(1),previous=()=>step(-1);
         galleryControls.querySelector('.gallery-next').addEventListener('click',next);
@@ -403,12 +416,13 @@
           galleryControls.querySelector('.gallery-next').removeEventListener('click',next);
           galleryControls.querySelector('.gallery-prev').removeEventListener('click',previous);
         });
-        const rows=[...list.querySelectorAll('.project-row')];
         rows.forEach((row,i)=>{
           const focus=()=>{
             const st=rail.scrollTrigger;
-            window.scrollTo({top:st.start+(st.end-st.start)*i/(rows.length-1),behavior:'instant'});
+            const position=positions()[i];
+            window.scrollTo({top:st.start+(st.end-st.start)*position,behavior:'instant'});
             ScrollTrigger.update();
+            rail.progress(position);
           };
           row.addEventListener('focusin',focus);
           pointerCleanups.push(()=>row.removeEventListener('focusin',focus));
