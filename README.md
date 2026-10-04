@@ -1,5 +1,7 @@
 # Portafolio de Ítalo Muñoz Pomar
 
+[Sitio web](https://italomunozpomar.github.io/Portafolio/) · [Repositorio público](https://github.com/italomunozpomar/Portafolio)
+
 Portafolio estático en español: seis casos profesionales, cuatro proyectos públicos y una experiencia visual que conecta producto, infraestructura e IA. HTML, CSS, SVG, Canvas y JavaScript con GSAP local; sin backend ni build.
 
 ## Archivos de publicación
@@ -41,16 +43,15 @@ El comando HTTP requiere una instalación local de Python. Abrir `http://127.0.0
 
 ## GitHub Pages
 
-1. Crear o elegir un repositorio público y copiar exclusivamente los archivos de publicación.
-2. Guardarlos en la rama elegida para el sitio.
-3. En **Settings → Pages**, elegir **Deploy from a branch**, la rama y **/ (root)**.
-4. Usar la URL que GitHub muestre cuando termine de publicar.
+El repositorio `italomunozpomar/Portafolio` publica desde la rama **main** y **/ (root)**. Los cambios enviados a esa rama activan la publicación de GitHub Pages.
+
+Para actualizar desde este directorio de trabajo, copiar exclusivamente los archivos de publicación al checkout de publicación `.research/publish-github`, revisarlos, guardarlos en Git y subirlos a `main`.
 
 Estos pasos siguen la [documentación oficial de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 Las rutas relativas permiten servir el portafolio tanto en la raíz como bajo un nombre de repositorio, por ejemplo `/Portafolio/`. No requiere configurar variables de entorno.
 
-El título y la descripción para compartir ya están incluidos. Al conocer la URL pública definitiva, agregar una etiqueta `og:image` con la URL **absoluta** de `assets/social-preview.png`; el gráfico ya está preparado. No se fija un dominio o URL canónica antes de elegir dónde publicar.
+El título, la descripción, la URL canónica y la imagen para compartir están configurados para `https://italomunozpomar.github.io/Portafolio/`. `og:image` utiliza la URL absoluta del PNG de 1200 × 630 px. Si cambia el dominio, actualizar esas etiquetas en `index.html`.
 
 ## Editar contenido y diseño
 
@@ -77,4 +78,4 @@ La preferencia de movimiento del sistema se revisa en código; la herramienta de
 
 El sitio no solicita datos de ClickUp, Bitbucket, Drive ni servicios de analítica. El Canvas deja de dibujar fuera de pantalla o con la pestaña oculta, limita la densidad de píxeles y utiliza una malla menor en móvil. Los enlaces externos admiten la apertura normal del navegador en otra pestaña.
 
-Esta entrega conserva el trabajo local. La publicación remota queda para el repositorio y dominio que elijas.
+El repositorio público contiene exclusivamente el sitio y este README. El historial de investigación y los archivos locales permanecen en este directorio de trabajo.
